@@ -18,7 +18,7 @@ public class LikeService {
      一个点赞，两处更新 ： 1 当前帖子or评论点赞更新；2 发帖人、评论人主页信息获赞数更新
     事务操作*/
 
-    public void like(int userId, int entityType, int entityId,int entityUserId) {
+    public void like(int userId, int entityType, int entityId, int entityUserId) {
 //        String entityLikeKey = RedisKeyUtil.getEntityLikeKey(entityType, entityId);
 //        boolean isMember = redisTemplate.opsForSet().isMember(entityLikeKey, userId);
 //        if (isMember) {
@@ -63,7 +63,7 @@ public class LikeService {
     public int findUserLikeCount(int userId) {
         String userLikeKey = RedisKeyUtil.getUserLikeKey(userId);
         Integer count = (Integer) redisTemplate.opsForValue().get(userLikeKey);
-        return count == null ? 0:count.intValue();
+        return count == null ? 0 : count.intValue();
     }
 
 }
