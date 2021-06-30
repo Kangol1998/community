@@ -1,0 +1,5 @@
+### 新增数据
+GET http://localhost:9200/discusspost/_search
+
+
+###
